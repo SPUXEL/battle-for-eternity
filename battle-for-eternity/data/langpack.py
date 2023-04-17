@@ -12,3 +12,10 @@ START__MESSAGE2 = (
 )
 
 START__MESSAGE3 = "Используй команду /menu для перехода в главное меню."
+
+
+# Main menu (M2)
+
+M2_MESSAGE = "Главное меню"
+
+M2_BUTTON__HUNTING = "Охота"
