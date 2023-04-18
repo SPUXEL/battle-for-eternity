@@ -16,6 +16,22 @@ START__MESSAGE3 = "Используй команду /menu для переход
 
 # Main menu (M2)
 
-M2_MESSAGE = "Главное меню"
+M2_MESSAGE = "Подгрузили кнопки главного меню."
 
 M2_BUTTON__HUNTING = "Охота"
+M2_BUTTON__CHARACTER = "Персонаж"
+
+
+# Character
+
+CHARACTER__MESSAGE = (
+    "<b><i>ПЕРСОНАЖ</i></b>"
+    "\n<pre>"
+    "\n ⌈ Уровень - "
+    "\n ⌈ Опыт - "
+    "\n"
+    "\n ⌈ Урон - "
+    "\n ⌈ Здоровье - "
+    "\n ⌈ Броня - "
+    "</pre>"
+)

@@ -14,6 +14,11 @@ async def _keyboard() -> ReplyKeyboardMarkup:
     )
     keyboard.add(button__hunting)
 
+    button__character = KeyboardButton(
+        langpack.M2_BUTTON__CHARACTER
+    )
+    keyboard.add(button__character)
+
     return keyboard
 
 
