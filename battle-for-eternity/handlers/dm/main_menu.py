@@ -1,5 +1,5 @@
 
-from aiogram.types import Message, \
+from aiogram.types import Message,\
     ReplyKeyboardMarkup, KeyboardButton
 
 from _bot import dispatcher
@@ -31,3 +31,11 @@ async def main_menu(update: Message):
         langpack.M2_MESSAGE,
         reply_markup=await _keyboard()
     )
+
+
+@dispatcher.message_handler(
+    chat_type="private",
+    text=langpack.BUTTON__TO_THE_MAIN_MENU
+)
+async def back_to_the_main_menu(update: Message):
+    await main_menu(update)

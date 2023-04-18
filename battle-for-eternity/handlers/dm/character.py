@@ -1,9 +1,21 @@
 
-from aiogram.types import Message
+from aiogram.types import Message,\
+    ReplyKeyboardMarkup, KeyboardButton
 
 from _bot import dispatcher
 from data import langpack
 from utils.test_character import character as _character
+
+
+async def _keyboard() -> ReplyKeyboardMarkup:
+    keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
+
+    button__back = KeyboardButton(
+        langpack.BUTTON__TO_THE_MAIN_MENU
+    )
+    keyboard.add(button__back)
+
+    return keyboard
 
 
 @dispatcher.message_handler(
@@ -21,5 +33,6 @@ async def character(update: Message):
             replace("weapon-name", str(_character.slots.weapon.name)).\
             replace("weapon-value", str(_character.slots.weapon.value)).\
             replace("armor-name", str(_character.slots.armor.name)).\
-            replace("armor-value", str(_character.slots.armor.value))
+            replace("armor-value", str(_character.slots.armor.value)),
+        reply_markup=await _keyboard()
     )
