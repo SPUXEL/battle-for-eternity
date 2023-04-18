@@ -17,5 +17,9 @@ async def character(update: Message):
             replace("character-experience", str(_character.level.experience)).\
             replace("character-damage", str(_character.base_characteristics.damage)).\
             replace("character-health", str(_character.base_characteristics.health)).\
-            replace("character-armor", str(_character.base_characteristics.armor))
+            replace("character-armor", str(_character.base_characteristics.armor)).\
+            replace("weapon-name", str(_character.slots.weapon.name)).\
+            replace("weapon-value", str(_character.slots.weapon.value)).\
+            replace("armor-name", str(_character.slots.armor.name)).\
+            replace("armor-value", str(_character.slots.armor.value))
     )

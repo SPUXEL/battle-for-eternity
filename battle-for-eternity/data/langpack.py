@@ -33,5 +33,13 @@ CHARACTER__MESSAGE = (
     "\n ⌈ Урон - character-damage"
     "\n ⌈ Здоровье - character-health"
     "\n ⌈ Броня - character-armor"
+    "\n"
+    "\n ОРУЖИЕ:"
+    "\n ⌈ Название - weapon-name"
+    "\n ⌈ Урон - weapon-value"
+    "\n"
+    "\n ДОСПЕХИ:"
+    "\n ⌈ Название - armor-name"
+    "\n ⌈ Броня - armor-value"
     "</pre>"
 )
