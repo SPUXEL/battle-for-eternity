@@ -11,7 +11,7 @@ character = character.Character(
     base_characteristics=character.CharacterBaseCharacteristics(
         damage=10,
         health=100,
-        armor=100
+        armor=50
     ),
     slots=character.CharacterSlots(
         weapon=character.Item(
