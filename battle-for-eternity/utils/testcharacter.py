@@ -2,7 +2,7 @@
 from utils import character
 
 
-character = character.Character(
+testcharacter = character.Character(
     id=999,
     level=character.CharacterLevel(
         level=1,
