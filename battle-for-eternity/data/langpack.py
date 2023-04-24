@@ -65,6 +65,16 @@ HUNTING__BUTTON__IN_THE_VICINITY = "Охота в окрестностях"
 HUNTING__BUTTON__MONSTER_ORDERS = "Заказы на монстров"
 HUNTING__BUTTON__START_HUNTING = "Начать охоту"
 
+HUNTING__GAME_SESSION__IN_THE_VICINITY = (
+    "<b><i>ПРОТИВНИК:</i></b>"
+    " monster-name"
+    "<pre>"
+    "\n Урон - monster-damage"
+    "\n Здоровье - monster-health"
+    "\n Броня - monster-armor"
+    "</pre>"
+)
+
 
 # States
 

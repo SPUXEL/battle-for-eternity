@@ -8,9 +8,9 @@ monsters = monster.Monsters([
         name="Гоблин-командир",
         description="",
         basic_characteristics=monster.MonsterBasicCharacteristics(
-            damage=15,
+            damage=7,
             health=50,
-            armor=25
+            armor=35
         )
     ),
 
@@ -18,9 +18,9 @@ monsters = monster.Monsters([
         name="Троль вояка",
         description="",
         basic_characteristics=monster.MonsterBasicCharacteristics(
-            damage=20,
+            damage=5,
             health=55,
-            armor=25
+            armor=40
         )
     )
 

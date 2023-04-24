@@ -28,10 +28,14 @@ async def _create_state_data(
     global monsters
 
     if game_mode == "in_the_vicinity":
+        monster = random.choice(monsters.monsters)
         return {
             "character": character,
             "character_health": None,
-            "monster": random.choice(monsters.monsters)
+            "character_armor": None,
+            "monster": monster,
+            "monster_health": monster.basic_characteristics.health,
+            "monster_armor": monster.basic_characteristics.armor
         }
 
     if game_mode == "order":
@@ -97,8 +101,30 @@ async def hunting_in_the_vicinity(update: Message, state: FSMContext):
         )
     )
 
-    await update.answer(
-        langpack.PREPARING_FOR_THE_HUNT,
-        reply_markup=None,
-        disable_notification=True
-    )
+
+@dispatcher.message_handler(
+    chat_type="private",
+    text=langpack.HUNTING__BUTTON__START_HUNTING,
+    state=HuntingGameSession.combat_preparation
+)
+async def start_hunting(update: Message, state: FSMContext):
+    await HuntingGameSession().session.set()
+    await game_session(update, state)
+
+
+@dispatcher.message_handler(
+    chat_type="private",
+    state=HuntingGameSession.session
+)
+async def game_session(update: Message, state: FSMContext):
+    state_data = await state.get_data()
+    monster = state_data.get("monster")
+    monster_health = state_data.get("monster_health")
+    monster_armor = state_data.get("monster_armor")
+
+    message = langpack.HUNTING__GAME_SESSION__IN_THE_VICINITY.\
+        replace("monster-name", monster.name).\
+        replace("monster-damage", str(monster.basic_characteristics.damage)).\
+        replace("monster-health", str(monster_health)).\
+        replace("monster-armor", str(monster_armor))
+    await update.answer(message)
